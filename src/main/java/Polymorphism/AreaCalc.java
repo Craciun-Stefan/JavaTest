@@ -12,5 +12,6 @@ public class AreaCalc {
         AreaCalc shapes = new AreaCalc();
         shapes.area(3);
         shapes.area(3,5.8);
+        shapes.area(6);
     }
 }
