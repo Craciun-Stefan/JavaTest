@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class CourseViewer {
 
@@ -38,6 +39,25 @@ public class CourseViewer {
                 desktop.add(courseFrame);
 
             }
+
+        });
+        //Collections
+
+        showStudentsButton.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                StringBuilder entriesText = new StringBuilder("Students: \n");
+
+                ArrayList<String> studentList = new ArrayList<>();
+                studentList.add("Alexx");
+                studentList.add("Mje e");
+                studentList.add("Pablito S");
+
+                for (String entry : studentList) {
+                    entriesText.append(entry).append("\n");
+                }
+                JOptionPane.showMessageDialog(null, entriesText.toString(), "Entries", JOptionPane.INFORMATION_MESSAGE);
+            }
         });
 
         JPanel buttonsPanel = new JPanel();
@@ -55,8 +75,29 @@ public class CourseViewer {
 
         JInternalFrame internalFrame = new JInternalFrame(title, true, true, true, true);
         internalFrame.setSize(200, 150);
+        JPanel panel1 = new JPanel();
+        panel1.setBackground(new Color(255,255,255)); //rgb generator online
+        JLabel nameLabel1 = new JLabel("Module Name: " + content1.subject);
+        JLabel durationLabel1 = new JLabel("Module Duration: " + content1.duration);
+        JLabel locationLabel1 = new JLabel("Module Duration: " + content1.location);
+
+        panel1.add(nameLabel1);
+        panel1.add(durationLabel1);
+        panel1.add(locationLabel1);
+
+        JLabel nameLabel2 = new JLabel("Module Name: " + content2.subject);
+        JLabel durationLabel2 = new JLabel("Module Duration: " + content2.duration);
+        JLabel locationLabel2 = new JLabel("Module Duration: " + content2.location);
+
+        panel1.add(nameLabel2);
+        panel1.add(durationLabel2);
+        panel1.add(locationLabel2);
+
+        internalFrame.add(panel1);
         internalFrame.setVisible(true);
 
         return internalFrame;
+
+        //de implementat informatiile pentru modulul 2 pe acelasi sistem
     }
 }

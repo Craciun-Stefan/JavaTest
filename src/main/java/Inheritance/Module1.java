@@ -5,7 +5,7 @@ public class Module1 extends BaseModule{ //extends e keyword pentru mostenire; m
     public int duration = 19;
     public String subject = "Methodologies/Project Management";
     String test = "a test and practie, based on concepts presented in the module";
-    String location = "online only";
+    public String location = "online only";
     public void defaultLocation(){
 
     }
